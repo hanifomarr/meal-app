@@ -11,7 +11,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="CategoryPage" component={CategoriesScreen} />
+        <Stack.Screen
+          options={{ title: "All Categories" }}
+          name="CategoryPage"
+          component={CategoriesScreen}
+        />
         <Stack.Screen name="MealsOverviewPage" component={MealsOverview} />
       </Stack.Navigator>
     </NavigationContainer>
