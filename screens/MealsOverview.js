@@ -1,10 +1,11 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const MealsOverview = () => {
+const MealsOverview = ({ route }) => {
+  const catID = route.params.categoryID;
   return (
     <View>
-      <Text>MealsOverview</Text>
+      <Text>MealsOverview{catID}</Text>
     </View>
   );
 };
