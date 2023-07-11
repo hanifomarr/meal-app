@@ -9,6 +9,10 @@ const MealsOverview = ({ route, navigation }) => {
     (itemdata) => itemdata.categoryIds.indexOf(catID) >= 0
   );
 
+  function mealOverviewHandler() {
+    navigation.navigate("MealScreen");
+  }
+
   useEffect(() => {
     const categoryTitle = CATEGORIES.find(
       (category) => category.id === catID
@@ -19,13 +23,14 @@ const MealsOverview = ({ route, navigation }) => {
   function renderMealList(itemData) {
     const item = itemData.item;
     const mealItemProp = {
+      id: item.id,
       title: item.title,
       imageUrl: item.imageUrl,
       duration: item.duration,
       complexity: item.complexity,
       affordability: item.affordability,
     };
-    return <MealItem {...mealItemProp} />;
+    return <MealItem {...mealItemProp} onPress={mealOverviewHandler} />;
   }
 
   return (
